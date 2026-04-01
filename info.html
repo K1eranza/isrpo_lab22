@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: block;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .btn-save {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .btn-clear {
+            background: #f44336;
+            color: white;
+        }
+
+        .profile-card {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .profile-card h2 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .profile-card p {
+            margin: 10px 0;
+            padding: 8px;
+            background: white;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Профиль пользователя</h1>
+
+        <div class="form-group">
+            <label>Имя:</label>
+            <input type="text" id="name" placeholder="Введите имя">
+            <span class="error" id="nameError"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Возраст:</label>
+            <input type="number" id="age" placeholder="Введите возраст">
+            <span class="error" id="ageError"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Город:</label>
+            <input type="text" id="city" placeholder="Введите город">
+            <span class="error" id="cityError"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Хобби:</label>
+            <input type="text" id="hobby" placeholder="Введите хобби">
+            <span class="error" id="hobbyError"></span>
+        </div>
+
+        <button class="btn-save" id="saveBtn">Сохранить</button>
+        <button class="btn-clear" id="clearBtn">Очистить</button>
+
+        <div class="profile-card">
+            <h2>Информация профиля</h2>
+            <p><strong>Имя:</strong> <span id="displayName">—</span></p>
+            <p><strong>Возраст:</strong> <span id="displayAge">—</span></p>
+            <p><strong>Город:</strong> <span id="displayCity">—</span></p>
+            <p><strong>Хобби:</strong> <span id="displayHobby">—</span></p>
+        </div>
+    </div>
