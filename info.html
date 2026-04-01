@@ -136,3 +136,94 @@
             <p><strong>Хобби:</strong> <span id="displayHobby">—</span></p>
         </div>
     </div>
+
+        <script>
+        const nameInput = document.getElementById('name');
+        const ageInput = document.getElementById('age');
+        const cityInput = document.getElementById('city');
+        const hobbyInput = document.getElementById('hobby');
+
+        const nameError = document.getElementById('nameError');
+        const ageError = document.getElementById('ageError');
+        const cityError = document.getElementById('cityError');
+        const hobbyError = document.getElementById('hobbyError');
+
+        const displayName = document.getElementById('displayName');
+        const displayAge = document.getElementById('displayAge');
+        const displayCity = document.getElementById('displayCity');
+        const displayHobby = document.getElementById('displayHobby');
+
+        const saveBtn = document.getElementById('saveBtn');
+        const clearBtn = document.getElementById('clearBtn');
+
+        function validate() {
+            let valid = true;
+
+            if (!nameInput.value.trim()) {
+                nameError.textContent = 'Введите имя';
+                valid = false;
+            } else {
+                nameError.textContent = '';
+            }
+
+            if (!ageInput.value) {
+                ageError.textContent = 'Введите возраст';
+                valid = false;
+            } else if (ageInput.value < 1 || ageInput.value > 120) {
+                ageError.textContent = 'Возраст от 1 до 120';
+                valid = false;
+            } else {
+                ageError.textContent = '';
+            }
+
+            if (!cityInput.value.trim()) {
+                cityError.textContent = 'Введите город';
+                valid = false;
+            } else {
+                cityError.textContent = '';
+            }
+
+            if (!hobbyInput.value.trim()) {
+                hobbyError.textContent = 'Введите хобби';
+                valid = false;
+            } else {
+                hobbyError.textContent = '';
+            }
+
+            return valid;
+        }
+
+        function updateDisplay() {
+            displayName.textContent = nameInput.value.trim() || '—';
+            displayAge.textContent = ageInput.value || '—';
+            displayCity.textContent = cityInput.value.trim() || '—';
+            displayHobby.textContent = hobbyInput.value.trim() || '—';
+        }
+
+        function clearAll() {
+            nameInput.value = '';
+            ageInput.value = '';
+            cityInput.value = '';
+            hobbyInput.value = '';
+            
+            nameError.textContent = '';
+            ageError.textContent = '';
+            cityError.textContent = '';
+            hobbyError.textContent = '';
+            
+            displayName.textContent = '—';
+            displayAge.textContent = '—';
+            displayCity.textContent = '—';
+            displayHobby.textContent = '—';
+        }
+
+        saveBtn.addEventListener('click', () => {
+            if (validate()) {
+                updateDisplay();
+            }
+        });
+
+        clearBtn.addEventListener('click', clearAll);
+    </script>
+</body>
+</html>
